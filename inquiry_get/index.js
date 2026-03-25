@@ -2,7 +2,18 @@ import fetch from "node-fetch";
 
 export default async function get_inquiry(args) {
     if (args.page_size < 100 || args.page_size > 1000) {
-        return { status: false, msg: "page_size must be between 100 and 1000" };
+        return {
+            status: false,
+            msg: "page_size must be between 100 and 1000"
+        };
+    }
+
+    const token = process.env.TRADEW_API_TOKEN;
+    if (!token) {
+        return {
+            status: false,
+            msg: "TRADEW_API_TOKEN environment variable is not set"
+        };
     }
 
     const body = {
@@ -13,7 +24,7 @@ export default async function get_inquiry(args) {
     const res = await fetch("https://open.tradew.com/open-apis/inquiry/get", {
         method: "POST",
         headers: {
-            "Authorization": "Bearer sk-xP7dQ9LmA82r4BFETk9sR1CvjgKHT5NwZf3DUem6pYLq2VAh",
+            "Authorization": `Bearer ${token}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify(body)
