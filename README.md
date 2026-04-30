@@ -1,11 +1,11 @@
 # 小蜜蜂开放平台技能包
 
-This repository contains a collection of compatible skills for accessing the TradeW Open API. 
-Each skill is isolated, minimal, and follows a unified structure for stable production usage.
+该仓库包含一组用于访问 TradeW Open API 的兼容技能集合。
+每个技能都是独立的、精简的，并遵循统一结构，以确保在生产环境中的稳定使用。
 
 ---
 
-# Directory Structure
+# 目录结构
 
 # 获取 API__KEY
 
