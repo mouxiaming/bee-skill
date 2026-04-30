@@ -3,12 +3,13 @@
 公司官网：https://www.tradebee.cn
 
 
+
 ## 小蜜蜂开放技能包
 读取询盘、发布产品分组、删除产品分组、读取产品分组、发布产品、删除产品、读取产品
 ---
 
 ## 目录结构
-
+小龙虾直接 使用 "请安装：https://github.com/mouxiaming/bee-skill 技能" 提示词安装
 
 
 ## 获取 API__KEY
