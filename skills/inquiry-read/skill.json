@@ -1,14 +1,13 @@
 {
-  "name": "tradew_read_inquiry",
-  "description": "Read inquiries from Tradew platform. Requires language from TradewGetLanguages skill.",
-  "version": "1.2.0",
+  "name": "inquiry-read",
+  "description": "Read inquiries from Tradew platform.",
+  "version": "1.0.0",
   "input": {
     "type": "object",
-    "required": [ "language" ],
     "properties": {
       "language": {
         "type": "string",
-        "description": "Language code must be obtained from TradewGetLanguages skill (e.g. en, fr, ja)"
+        "description": "Optional. If provided, must be selected by user from LanguagesGet after confirmation. No auto-selection or system inference is allowed."
       },
       "current_page": {
         "type": "number",
@@ -22,6 +21,8 @@
       },
       "fields": {
         "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
         "items": {
           "type": "string"
         }
@@ -30,7 +31,7 @@
   },
   "dependencies": {
     "language": {
-      "skill": "TradewGetLanguages",
+      "skill": "LanguagesGet",
       "field": "list[].language",
       "mode": "select"
     }

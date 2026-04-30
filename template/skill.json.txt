@@ -1,0 +1,38 @@
+{
+  "name": "inquiry-read",
+  "description": "Read inquiries from Tradew platform. Requires language from LanguagesGet skill.",
+  "version": "1.0.0",
+  "input": {
+    "type": "object",
+    "required": [ "language" ],
+    "properties": {
+      "language": {
+        "type": "string",
+        "description": "Language code must be obtained from LanguagesGet skill (e.g. en, fr, ja)"
+      },
+      "current_page": {
+        "type": "number",
+        "default": 1
+      },
+      "page_size": {
+        "type": "number",
+        "default": 10,
+        "minimum": 10,
+        "maximum": 50
+      },
+      "fields": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "language": {
+      "skill": "LanguagesGet",
+      "field": "list[].language",
+      "mode": "select"
+    }
+  }
+}
