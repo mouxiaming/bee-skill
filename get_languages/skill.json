@@ -1,0 +1,22 @@
+{
+  "name": "tradew_get_languages",
+  "description": "Get supported languages from Tradew platform",
+  "version": "1.0.0",
+  "output": {
+    "type": "object",
+    "properties": {
+      "status": { "type": "string" },
+      "msg": { "type": "string" },
+      "list": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "language": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}
